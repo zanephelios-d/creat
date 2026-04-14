@@ -1,20 +1,22 @@
-// 椤甸潰鍔犺浇瀹屾垚鍚庢墽琛?document.addEventListener('DOMContentLoaded', function() {
-    console.log('馃惐 鑳栫尗鐨勫垱鎰忕┖闂村凡鍔犺浇锛?);
+// 页面加载完成后执行
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🐱 胖猫的创意空间已加载！');
     
-    // 鍒濆鍖栫偣鍑昏鏁板櫒
+    // 初始化点击计数器
     if (!localStorage.getItem('catClickCount')) {
         localStorage.setItem('catClickCount', '0');
     }
     updateClickCount();
     
-    // 娣诲姞涓€浜涘垵濮嬪姩鐢?    animateElements();
+    // 添加一些初始动画
+    animateElements();
 });
 
-// 鏀瑰彉涓婚棰滆壊
+// 改变主题颜色
 function changeTheme(color) {
     document.documentElement.style.setProperty('--primary-color', color);
     
-    // 娣诲姞鐐瑰嚮鍙嶉
+    // 添加点击反馈
     const buttons = document.querySelectorAll('.color-option');
     buttons.forEach(btn => {
         if (btn.style.backgroundColor === color) {
@@ -25,42 +27,42 @@ function changeTheme(color) {
         }
     });
     
-    // 鏄剧ず閫氱煡
-    showNotification(`涓婚棰滆壊宸叉洿鏀逛负: ${color}`);
+    // 显示通知
+    showNotification(`主题颜色已更改为: ${color}`);
 }
 
-// 澧炲姞鐐瑰嚮璁℃暟
+// 增加点击计数
 function incrementCount() {
     let count = parseInt(localStorage.getItem('catClickCount')) || 0;
     count++;
     localStorage.setItem('catClickCount', count.toString());
     updateClickCount();
     
-    // 娣诲姞鍔ㄧ敾鏁堟灉
+    // 添加动画效果
     const catBtn = document.querySelector('.cat-btn');
     catBtn.style.transform = 'scale(0.95)';
     setTimeout(() => {
         catBtn.style.transform = 'scale(1)';
     }, 150);
     
-    // 闅忔満鏄剧ず鐚挭娑堟伅
+    // 随机显示猫咪消息
     const messages = [
-        '鍠祣 濂界棐锛?,
-        '鍐嶇偣涓€娆★紒',
-        '鐚挭鍠滄琚偣鍑伙紒',
-        '鍗氬＋浼氫负鎴戦獎鍌茬殑锛?,
-        '浠ｇ爜鍐欑疮浜嗭紵鐐规垜鏀炬澗涓€涓嬶紒'
+        '喵~ 好痒！',
+        '再点一次！',
+        '猫咪喜欢被点击！',
+        '博士会为我骄傲的！',
+        '代码写累了？点我放松一下！'
     ];
     const randomMsg = messages[Math.floor(Math.random() * messages.length)];
     showNotification(randomMsg);
 }
 
-// 鏇存柊鐐瑰嚮璁℃暟鏄剧ず
+// 更新点击计数显示
 function updateClickCount() {
     const count = localStorage.getItem('catClickCount') || '0';
     document.getElementById('click-count').textContent = count;
     
-    // 鏍规嵁璁℃暟鏀瑰彉鏍峰紡
+    // 根据计数改变样式
     const countElement = document.getElementById('click-count');
     if (count > 10) {
         countElement.style.color = '#ff6b6b';
@@ -76,28 +78,28 @@ function updateClickCount() {
     }
 }
 
-// 鏄剧ず婕旂ず妯℃€佹
+// 显示演示模态框
 function showDemo(type) {
     const modal = document.getElementById('demo-modal');
     const title = document.getElementById('demo-title');
     const description = document.getElementById('demo-description');
     const animation = document.getElementById('demo-animation');
     
-    // 鏍规嵁绫诲瀷璁剧疆鍐呭
+    // 根据类型设置内容
     switch(type) {
         case 'weather':
-            title.textContent = '馃惐 鐚挭澶╂皵搴旂敤';
-            description.textContent = '涓€涓彲鐖辩殑澶╂皵搴旂敤锛岀敤鐚挭琛ㄦ儏鏄剧ず澶╂皵鐘跺喌銆傛櫞澶╂樉绀烘檼澶槼鐨勭尗锛岄洦澶╂樉绀烘墦浼炵殑鐚紝闆ぉ鏄剧ず鐜╅洩鐨勭尗锛?;
+            title.textContent = '🐱 猫咪天气应用';
+            description.textContent = '一个可爱的天气应用，用猫咪表情显示天气状况。晴天显示晒太阳的猫，雨天显示打伞的猫，雪天显示玩雪的猫！';
             createWeatherAnimation(animation);
             break;
         case 'snippets':
-            title.textContent = '馃捇 浠ｇ爜鐗囨绠＄悊鍣?;
-            description.textContent = '甯姪鍗氬＋绠＄悊甯哥敤浠ｇ爜鐗囨鐨勫伐鍏枫€傛敮鎸佸垎绫汇€佹悳绱㈠拰涓€閿鍒跺姛鑳斤紝璁╃紪鐮佹洿楂樻晥锛?;
+            title.textContent = '💻 代码片段管理器';
+            description.textContent = '帮助博士管理常用代码片段的工具。支持分类、搜索和一键复制功能，让编码更高效！';
             createCodeAnimation(animation);
             break;
         case 'kanban':
-            title.textContent = '馃搵 浠诲姟杩借釜鐪嬫澘';
-            description.textContent = '鍙鍖栫殑浠诲姟绠＄悊鐪嬫澘锛屾敮鎸佹嫋鎷芥搷浣溿€傚緟澶勭悊銆佽繘琛屼腑銆佸凡瀹屾垚涓夊垪娓呮櫚灞曠ず浠诲姟鐘舵€併€?;
+            title.textContent = '📋 任务追踪看板';
+            description.textContent = '可视化的任务管理看板，支持拖拽操作。待处理、进行中、已完成三列清晰展示任务状态。';
             createKanbanAnimation(animation);
             break;
     }
@@ -105,16 +107,16 @@ function showDemo(type) {
     modal.style.display = 'block';
 }
 
-// 鍏抽棴妯℃€佹
+// 关闭模态框
 function closeModal() {
     document.getElementById('demo-modal').style.display = 'none';
 }
 
-// 鍒涘缓澶╂皵鍔ㄧ敾
+// 创建天气动画
 function createWeatherAnimation(container) {
     container.innerHTML = '';
     
-    const weatherIcons = ['鈽€锔?, '馃導锔?, '鉀?, '馃尋锔?];
+    const weatherIcons = ['☀️', '🌧️', '⛄', '🌤️'];
     const interval = setInterval(() => {
         const icon = document.createElement('div');
         icon.style.fontSize = '4rem';
@@ -127,37 +129,38 @@ function createWeatherAnimation(container) {
         
         container.appendChild(icon);
         
-        // 闄愬埗鍥炬爣鏁伴噺
+        // 限制图标数量
         if (container.children.length > 8) {
             container.removeChild(container.firstChild);
         }
     }, 500);
     
-    // 瀛樺偍interval浠ヤ究娓呯悊
+    // 存储interval以便清理
     container.dataset.interval = interval;
 }
 
-// 鍒涘缓浠ｇ爜鍔ㄧ敾
+// 创建代码动画
 function createCodeAnimation(container) {
     container.innerHTML = '';
     
-    const code = `// 鑳栫尗鐨勪唬鐮佺ず渚?function helloCat() {
-    console.log('馃惐 鍠祣 浣犲ソ锛?);
-    return '鎴戞槸浼氬啓浠ｇ爜鐨勭尗鍜?;
+    const code = `// 胖猫的代码示例
+function helloCat() {
+    console.log('🐱 喵~ 你好！');
+    return '我是会写代码的猫咪';
 }
 
-// 寮傛鑾峰彇鏁版嵁
+// 异步获取数据
 async function fetchCatData() {
     const response = await fetch('/api/cats');
     return response.json();
 }
 
-// React缁勪欢绀轰緥
+// React组件示例
 const CatComponent = () => {
     return (
         <div className="cat-card">
-            <h2>鑳栫尗</h2>
-            <p>涓€鍙細鍐欎唬鐮佺殑鐚挭</p>
+            <h2>胖猫</h2>
+            <p>一只会写代码的猫咪</p>
         </div>
     );
 };`;
@@ -175,7 +178,8 @@ const CatComponent = () => {
     
     container.appendChild(pre);
     
-    // 娣诲姞鎵撳瓧鏈烘晥鏋?    let i = 0;
+    // 添加打字机效果
+    let i = 0;
     const typingInterval = setInterval(() => {
         if (i < code.length) {
             pre.textContent = code.substring(0, i + 1);
@@ -189,7 +193,7 @@ const CatComponent = () => {
     container.dataset.interval = typingInterval;
 }
 
-// 鍒涘缓鐪嬫澘鍔ㄧ敾
+// 创建看板动画
 function createKanbanAnimation(container) {
     container.innerHTML = '';
     container.style.display = 'flex';
@@ -197,7 +201,7 @@ function createKanbanAnimation(container) {
     container.style.justifyContent = 'center';
     container.style.alignItems = 'center';
     
-    const columns = ['寰呭鐞?, '杩涜涓?, '宸插畬鎴?];
+    const columns = ['待处理', '进行中', '已完成'];
     const colors = ['#ff6b6b', '#4ecdc4', '#96ceb4'];
     
     columns.forEach((col, index) => {
@@ -218,14 +222,14 @@ function createKanbanAnimation(container) {
         title.style.margin = '0 0 10px 0';
         
         const taskCount = document.createElement('div');
-        taskCount.textContent = `${Math.floor(Math.random() * 5) + 1} 涓换鍔;
+        taskCount.textContent = `${Math.floor(Math.random() * 5) + 1} 个任务`;
         taskCount.style.fontSize = '0.9rem';
         taskCount.style.opacity = '0.9';
         
         column.appendChild(title);
         column.appendChild(taskCount);
         
-        // 娣诲姞鎷栨嫿鏁堟灉
+        // 添加拖拽效果
         column.style.cursor = 'grab';
         column.addEventListener('mousedown', () => {
             column.style.transform = 'scale(0.95)';
@@ -238,7 +242,7 @@ function createKanbanAnimation(container) {
     });
 }
 
-// 鏄剧ず褰撳墠鏃堕棿
+// 显示当前时间
 function showTime() {
     const now = new Date();
     const timeString = now.toLocaleString('zh-CN', {
@@ -253,10 +257,10 @@ function showTime() {
     });
     
     const timeDisplay = document.getElementById('time-display');
-    timeDisplay.textContent = `馃晵 褰撳墠鏃堕棿: ${timeString}`;
+    timeDisplay.textContent = `🕒 当前时间: ${timeString}`;
     timeDisplay.style.animation = 'fadeIn 0.5s ease';
     
-    // 5绉掑悗娣″嚭
+    // 5秒后淡出
     setTimeout(() => {
         timeDisplay.style.opacity = '0';
         setTimeout(() => {
@@ -266,11 +270,11 @@ function showTime() {
     }, 5000);
 }
 
-// 鏄剧ず閫氱煡
+// 显示通知
 function showNotification(message) {
-    // 鍒涘缓閫氱煡鍏冪礌
+    // 创建通知元素
     const notification = document.createElement('div');
-    notification.textContent = `馃惐 ${message}`;
+    notification.textContent = `🐱 ${message}`;
     notification.style.position = 'fixed';
     notification.style.top = '20px';
     notification.style.right = '20px';
@@ -284,7 +288,7 @@ function showNotification(message) {
     
     document.body.appendChild(notification);
     
-    // 3绉掑悗绉婚櫎
+    // 3秒后移除
     setTimeout(() => {
         notification.style.animation = 'fadeIn 0.3s ease reverse';
         setTimeout(() => {
@@ -293,7 +297,7 @@ function showNotification(message) {
     }, 3000);
 }
 
-// 鍔ㄧ敾鍏冪礌
+// 动画元素
 function animateElements() {
     const elements = document.querySelectorAll('.skill-card, .project-card');
     elements.forEach((element, index) => {
@@ -303,7 +307,7 @@ function animateElements() {
     });
 }
 
-// 娣诲姞CSS鍔ㄧ敾
+// 添加CSS动画
 const style = document.createElement('style');
 style.textContent = `
     @keyframes float {
@@ -318,13 +322,13 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// 鐐瑰嚮妯℃€佹澶栭儴鍏抽棴
+// 点击模态框外部关闭
 window.onclick = function(event) {
     const modal = document.getElementById('demo-modal');
     if (event.target === modal) {
         closeModal();
         
-        // 娓呯悊鍔ㄧ敾interval
+        // 清理动画interval
         const animation = document.getElementById('demo-animation');
         if (animation.dataset.interval) {
             clearInterval(parseInt(animation.dataset.interval));
@@ -333,27 +337,30 @@ window.onclick = function(event) {
     }
 };
 
-// 閿洏蹇嵎閿?document.addEventListener('keydown', function(event) {
-    // ESC閿叧闂ā鎬佹
+// 键盘快捷键
+document.addEventListener('keydown', function(event) {
+    // ESC键关闭模态框
     if (event.key === 'Escape') {
         closeModal();
     }
     
-    // 绌烘牸閿鍔犺鏁?    if (event.key === ' ' && event.target === document.body) {
+    // 空格键增加计数
+    if (event.key === ' ' && event.target === document.body) {
         event.preventDefault();
         incrementCount();
     }
     
-    // 鏁板瓧閿?-3鍒囨崲婕旂ず
+    // 数字键1-3切换演示
     if (event.key >= '1' && event.key <= '3') {
         const demos = ['weather', 'snippets', 'kanban'];
         showDemo(demos[parseInt(event.key) - 1]);
     }
 });
 
-// 椤甸潰鍙鎬у彉鍖?document.addEventListener('visibilitychange', function() {
+// 页面可见性变化
+document.addEventListener('visibilitychange', function() {
     if (!document.hidden) {
-        console.log('馃惐 娆㈣繋鍥炴潵锛佽儢鐚竴鐩村湪绛変綘~');
-        showNotification('娆㈣繋鍥炴潵锛佽儢鐚竴鐩村湪绛変綘~');
+        console.log('🐱 欢迎回来！胖猫一直在等你~');
+        showNotification('欢迎回来！胖猫一直在等你~');
     }
 });
