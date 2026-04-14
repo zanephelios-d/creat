@@ -1,4 +1,4 @@
-/* 鍏ㄥ眬鏍峰紡 */
+/* 全局样式 */
 :root {
     --primary-color: #ff6b6b;
     --secondary-color: #4ecdc4;
@@ -29,7 +29,7 @@ body {
     padding: 20px;
 }
 
-/* 澶撮儴鏍峰紡 */
+/* 头部样式 */
 .header {
     text-align: center;
     padding: 40px 20px;
@@ -64,14 +64,14 @@ body {
     font-family: 'Comic Neue', cursive;
 }
 
-/* 涓昏鍐呭鍖哄煙 */
+/* 主要内容区域 */
 .main-content {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* 鑻遍泟鍖哄煙 */
+/* 英雄区域 */
 .hero {
     text-align: center;
     padding: 40px;
@@ -196,7 +196,7 @@ body {
     color: #666;
 }
 
-/* 鎶€鑳藉尯鍩?*/
+/* 技能区域 */
 .skills h3, .projects h3, .interactive h3 {
     font-size: 1.8rem;
     color: var(--primary-color);
@@ -238,7 +238,7 @@ body {
     color: var(--text-color);
 }
 
-/* 椤圭洰鍖哄煙 */
+/* 项目区域 */
 .project-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -280,7 +280,7 @@ body {
     transform: scale(1.05);
 }
 
-/* 浜掑姩鍖哄煙 */
+/* 互动区域 */
 .interactive-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -347,7 +347,7 @@ body {
     transform: scale(1.05);
 }
 
-/* 寮曠敤鍖哄煙 */
+/* 引用区域 */
 .quote {
     text-align: center;
     padding: 40px;
@@ -368,7 +368,7 @@ body {
     opacity: 0.9;
 }
 
-/* 椤佃剼 */
+/* 页脚 */
 .footer {
     text-align: center;
     padding: 30px;
@@ -412,7 +412,7 @@ body {
     font-weight: bold;
 }
 
-/* 妯℃€佹 */
+/* 模态框 */
 .modal {
     display: none;
     position: fixed;
@@ -456,7 +456,7 @@ body {
     overflow: hidden;
 }
 
-/* 鍔ㄧ敾 */
+/* 动画 */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -467,7 +467,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 鍝嶅簲寮忚璁?*/
+/* 响应式设计 */
 @media (max-width: 768px) {
     .logo h1 {
         font-size: 2rem;
@@ -486,7 +486,7 @@ body {
     }
 }
 
-/* 鎵撳嵃鏍峰紡 */
+/* 打印样式 */
 @media print {
     .interactive, .demo-btn, .cat-btn {
         display: none;
