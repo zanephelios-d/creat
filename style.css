@@ -1,0 +1,494 @@
+/* 鍏ㄥ眬鏍峰紡 */
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --background-color: #f7f9fc;
+    --text-color: #333;
+    --card-color: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 澶撮儴鏍峰紡 */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.logo i {
+    font-size: 3rem;
+    animation: bounce 2s infinite;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-family: 'Comic Neue', cursive;
+}
+
+/* 涓昏鍐呭鍖哄煙 */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* 鑻遍泟鍖哄煙 */
+.hero {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--card-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.cat-avatar {
+    margin: 0 auto 30px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.cat-face {
+    width: 150px;
+    height: 150px;
+    background-color: #ffb347;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cat-ear {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #ffb347;
+    border-radius: 50%;
+    top: -20px;
+}
+
+.left-ear {
+    left: 20px;
+    transform: rotate(-20deg);
+}
+
+.right-ear {
+    right: 20px;
+    transform: rotate(20deg);
+}
+
+.cat-eye {
+    position: absolute;
+    width: 25px;
+    height: 35px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 50px;
+}
+
+.left-eye {
+    left: 35px;
+}
+
+.right-eye {
+    right: 35px;
+}
+
+.cat-nose {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background-color: #ff6b8b;
+    border-radius: 50%;
+    top: 85px;
+    left: 65px;
+}
+
+.cat-mouth {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    border-bottom: 3px solid #333;
+    border-radius: 0 0 40px 40px;
+    top: 100px;
+    left: 55px;
+}
+
+.cat-whisker {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: #333;
+    top: 70px;
+}
+
+.left-whisker-1 {
+    left: 10px;
+    transform: rotate(10deg);
+}
+
+.left-whisker-2 {
+    left: 10px;
+    transform: rotate(-10deg);
+    top: 80px;
+}
+
+.right-whisker-1 {
+    right: 10px;
+    transform: rotate(-10deg);
+}
+
+.right-whisker-2 {
+    right: 10px;
+    transform: rotate(10deg);
+    top: 80px;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #666;
+}
+
+/* 鎶€鑳藉尯鍩?*/
+.skills h3, .projects h3, .interactive h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    background-color: var(--card-color);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.skill-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* 椤圭洰鍖哄煙 */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background-color: var(--card-color);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h4 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.demo-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: var(--transition);
+}
+
+.demo-btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* 浜掑姩鍖哄煙 */
+.interactive-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.color-picker h4, .counter h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.color-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid white;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.color-option:hover {
+    transform: scale(1.2);
+}
+
+.counter p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+#click-count {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+.cat-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.cat-btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* 寮曠敤鍖哄煙 */
+.quote {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.quote blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.quote footer {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* 椤佃剼 */
+.footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    background-color: var(--card-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.footer p {
+    margin-bottom: 15px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.links a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.separator {
+    color: #999;
+}
+
+.time-display {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 妯℃€佹 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--card-color);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.demo-animation {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* 鍔ㄧ敾 */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 鍝嶅簲寮忚璁?*/
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .skills-grid, .project-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .interactive-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 鎵撳嵃鏍峰紡 */
+@media print {
+    .interactive, .demo-btn, .cat-btn {
+        display: none;
+    }
+}
